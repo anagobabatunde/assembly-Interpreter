@@ -65,7 +65,7 @@ int mul(elem_t **pile) {
     elem_t *tmp;
     tmp = *pile;
     int sum = 0;
-    sum = pop(&tmp) * pop(&tmp);
+    sum = pop(&tmp) / pop(&tmp);
     *pile = tmp;
     push(pile, sum);
     return (sum);
