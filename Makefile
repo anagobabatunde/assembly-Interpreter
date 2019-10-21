@@ -15,7 +15,8 @@ NAME	= abstractvm
 
 SRC	= \
 	src/main.c \
-	src/basicFunction.c
+	src/basicFunction.c \
+	src/fileHandler.c
 
 OBJ	= $(SRC:.c=.o)
 

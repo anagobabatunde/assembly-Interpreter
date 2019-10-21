@@ -4,6 +4,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <string.h> 
 
 struct element  {
     int value;
@@ -21,5 +25,8 @@ int _mul(elem_t **pile);
 int _div(elem_t **pile);
 int _mod(elem_t **pile);
 int assert(elem_t **pile, int value);
+void getAvm(char* path);
+void exitAndMsg(char* msg, int code);
+int isRegFile(const char *p);
 
 #endif
