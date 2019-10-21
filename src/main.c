@@ -9,7 +9,7 @@ int main()
         push(&list, i);
     }
     //print_list(list);
-    div(&list);
+    _div(&list);
     print_list(list);
 
     // printf("apres\n\n");

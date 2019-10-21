@@ -41,7 +41,7 @@ int pop(elem_t **pile)
     return val;
 }
 
-int add(elem_t **pile) {
+int _add(elem_t **pile) {
     elem_t *tmp;
     tmp = *pile;
     int sum = 0;
@@ -51,7 +51,7 @@ int add(elem_t **pile) {
     return (sum);
 }
 
-int sub(elem_t **pile) {
+int _sub(elem_t **pile) {
     elem_t *tmp;
     tmp = *pile;
     int sum = 0;
@@ -61,17 +61,17 @@ int sub(elem_t **pile) {
     return (sum);
 }
 
-int mul(elem_t **pile) {
+int _mul(elem_t **pile) {
     elem_t *tmp;
     tmp = *pile;
     int sum = 0;
-    sum = pop(&tmp) / pop(&tmp);
+    sum = pop(&tmp) * pop(&tmp);
     *pile = tmp;
     push(pile, sum);
     return (sum);
 }
 
-int div(elem_t **pile) {
+int _div(elem_t **pile) {
     elem_t *tmp;
     tmp = *pile;
     int sum = 0;
