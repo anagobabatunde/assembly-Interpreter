@@ -8,9 +8,7 @@ int main()
     {
         push(&list, i);
     }
-    //print_list(list);
-    _div(&list);
-    print_list(list);
+    dump(list);
 
     // printf("apres\n\n");
     // printf("j'ai enleve ça %d\n",pop(&list));

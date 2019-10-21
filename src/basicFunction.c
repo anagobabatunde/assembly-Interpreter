@@ -15,7 +15,7 @@ int push(elem_t **list, int valeur)
     return 0;
 }
 
-void print_list(elem_t *list)
+void dump(elem_t *list)
 {
     elem_t *elem = NULL;
 
@@ -79,4 +79,23 @@ int _div(elem_t **pile) {
     *pile = tmp;
     push(pile, sum);
     return (sum);
+}
+
+int _mod(elem_t **pile) {
+    elem_t *tmp;
+    tmp = *pile;
+    int sum = 0;
+    sum = pop(&tmp) % pop(&tmp);
+    *pile = tmp;
+    push(pile, sum);
+    return (sum);
+}
+
+int assert(elem_t **pile, int value)
+{
+    elem_t *tmp;
+    tmp = *pile;
+    if (tmp->value == value)
+        return (0);
+    return (1);
 }
