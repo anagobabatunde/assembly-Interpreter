@@ -7,8 +7,8 @@ int isRegFile(const char *p) {
 }
 
 void exitAndMsg(char* msg, int code) {
-    printf("%s\n", msg);
-    exit(code);
+    my_printf("%s\n", msg);
+    exit(code); // unauthorized function..
 }
 
 void getAvm(char* path) {
