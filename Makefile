@@ -5,8 +5,8 @@
 ##      This file compiles
 ##
 
-CC 		= gcc
-CCDBG	= gcc -g3
+CC 		= gcc 
+CCDBG	= gcc -g3 -std=c99
 RM		= /bin/rm -rf
 MAKE	= /usr/bin/make
 
@@ -46,11 +46,14 @@ all: abstractVM
 debug:
 	$(CCDBG) $(CFLAGS) -o $(NAME) $(SRC)
 
-abstractVM:
-	$(CC) $(CFLAGS) -o $(NAME) $(SRC)
+lazyd:
+	$(CCDBG) -o $(NAME) $(SRC)
 
 lazy:
 	$(CC) -o $(NAME) $(SRC)
+
+abstractVM:
+	$(CC) $(CFLAGS) -o $(NAME) $(SRC)
 
 clean:
 	$(RM) $(OBJ)

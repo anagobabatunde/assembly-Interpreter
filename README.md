@@ -30,7 +30,7 @@ exit
 
 ## Lauch with Docker
 ```
-docker run --rm -it -v $(PWD):/workdir/ --name compiler jaschac/debian-gcc /bin/bash
+docker run --rm -it -v $(PWD):/workdir/ --name crw2 jaschac/debian-gcc /bin/bash
 ```
 
 ## Additional Data
