@@ -20,6 +20,13 @@ struct element  {
 
 typedef struct element elem_t;
 
+// AVM Data
+typedef struct adat {
+    int ret; // Return value
+    char* data; // The data
+    char* msg; // Error/info message, if needed
+} adat_t;
+
 // LesMy
 int     my_nbrlen(int n);
 int     my_getnbr(char *str);
@@ -64,8 +71,8 @@ int _mul(elem_t **pile);
 int _div(elem_t **pile);
 int _mod(elem_t **pile);
 int assert(elem_t **pile, int value);
-void getAvm(char* path);
-void exitAndMsg(char* msg, int code);
+adat_t getAvm(char* path);
+adat_t exitAndMsg(char* msg, int code);
 int isRegFile(const char *p);
 
 #endif

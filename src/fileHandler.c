@@ -6,31 +6,47 @@ int isRegFile(const char *p) {
     return S_ISREG(pt.st_mode);
 }
 
-void exitAndMsg(char* msg, int code) {
-    my_printf("%s\n", msg);
-    exit(code); // unauthorized function ?
+adat_t exitAndMsg(char* msg, int code) {
+    adat_t adat;
+    adat.msg = msg;
+    adat.ret = code;
+    return adat;
 }
 
-void getAvm(char* path) {
+adat_t getAvm(char* path) {
+    adat_t adat;
     int in, size, rt;
-    char* bfr;
     /* RIP
     char *ext = strrchr(path, '.');
     if (! isRegFile(path) || ext == NULL || strcmp((ext + 1),"avm") != 0)
        exitAndMsg("Not a regular .avm file!", 1);
     */
     in = open(path, O_RDONLY);
-    if (in == -1)
-        exitAndMsg("Error while opening file. Please check filepath.", 1);
+    if (in == -1) {
+        return exitAndMsg("Error while opening file. Please check filepath.", 1);
+    }
+    /* //The stat way:
+    char* bfr;
     struct stat sz; // is stat allowed?
     stat(path, &sz);
     size = sz.st_size;
     bfr = malloc(size * (sizeof(char)));
     rt = read(in, bfr, size);
+    */
+    // The dégun way:
+    char bfr[1024];
+    rt = read(in, bfr, 1023);
+    if (rt == 0) {
+        return exitAndMsg("Error blank file?", 1);
+    }
+    // bfr[rt] = '\0';
     if (rt == -1)
-        exitAndMsg("Error while reading file. Is file blank?.", 1);
-    my_printf("%s\n", bfr);
+        return exitAndMsg("Error while reading file!", 1);
+    // my_printf("%s\n", bfr);
     close(in);
+    adat.data = bfr;
+    adat.ret = 0;
+    return adat;
 }
 
 int check_args(int c, char *v[]) {

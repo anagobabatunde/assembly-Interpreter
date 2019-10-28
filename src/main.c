@@ -5,8 +5,14 @@ int main(int argc, char **argv)
     if (argc>=3 || argc<=1) {
         printf("Usage: ./abstractvm path/to/program.avm\n(Hint: there's pre-made AVM files in the avms folder.)\n");
         return 1;
-    } else if (argc==2) {
-        getAvm(argv[1]);
+    } else if (argc==2) { // TODO : is if not needed ?
+        adat_t data;
+        data = getAvm(argv[1]);
+        if (data.ret == 1) {
+            if (data.msg)
+                my_printf("%s\n" , data.msg);
+            return 1;
+        }
     }
     elem_t *list = NULL;
 
