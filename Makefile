@@ -37,7 +37,8 @@ SRC	= \
 	src/my_printf_func/flags_func2.c \
 	src/main.c \
 	src/basicFunction.c \
-	src/fileHandler.c
+	src/fileHandler.c \
+	src/avmHandler.c
 
 OBJ	= $(SRC:.c=.o)
 

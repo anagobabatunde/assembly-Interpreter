@@ -31,6 +31,8 @@ exit
 ## Lauch with Docker
 ```
 docker run --rm -it -v $(PWD):/workdir/ --name crw2 jaschac/debian-gcc /bin/bash
+# OR
+docker build . -t containers.ikf3.com/etna/tic-crw2
 ```
 
 ## Additional Data
