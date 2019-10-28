@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 {
     if (argc>=3 || argc<=1) {
-        printf("Usage: ./abstractvm path/to/program.avm\n(Hint: there's pre-made AVM files in the avms folder.)\n");
+        my_printf("Usage: ./abstractvm path/to/program.avm\n(Hint: there's pre-made AVM files in the res folder.)\n");
         return 1;
     } else if (argc==2) { // TODO : is if not needed ?
         adat_t data;
