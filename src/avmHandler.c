@@ -19,7 +19,8 @@ void elFamosoParser(char dat[]) {
             col = 0;
         }
     }*/
-    printf(dat[1]);
+    printf("%c" , bfr);
+    // printf(dat[1]);
     // TODO : Investigate why segfault
     printf("\n");
 }

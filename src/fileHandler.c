@@ -33,6 +33,7 @@ adat_t getAvm(char* path) {
     rt = read(in, bfr, size);
     */
     // The dégun way:
+    // Andy idea: read 8bit per 8bit, then there will be a '\0'
     char bfr[1024];
     //size = 1023;
     //bfr = malloc(size * (sizeof(char)));
