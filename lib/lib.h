@@ -28,12 +28,14 @@ typedef struct adatret {
 // AVM Data
 typedef struct adat {
     adatret_t adt;
+    int read_ret;
     char* data; // The data
 } adat_t;
 
 typedef struct avm {
     int val;
 } avm_t;
+
 // LesMy
 int     my_nbrlen(int n);
 int     my_getnbr(char *str);

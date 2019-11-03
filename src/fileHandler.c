@@ -13,6 +13,29 @@ adat_t exitAndMsg(char* msg, int code) {
     return adat;
 }
 
+
+int getNbLine(char *b) {
+    int k, l = 0;
+    for (k; b[k] != '\0'; k++) {
+        if (b[k] == '\n')
+            l++;
+    }
+    return l;
+}
+
+int getLine(char* path) {
+    int in, rt;
+    char buffer[1024];
+    // rt = 0;
+
+    in = open(path, O_RDONLY);
+    rt = read(rt, buffer, 1023);
+    buffer[rt] = '\0';
+    close(in);
+
+    return getNbLine(buffer);
+}
+
 adat_t getAvm(char* path) {
     adat_t adat;
     int in, size, rt;
@@ -34,19 +57,23 @@ adat_t getAvm(char* path) {
     */
     // The dégun way:
     // Andy idea: read 8bit per 8bit, then there will be a '\0'
-    char bfr[1024];
+    //char bfr[1024];
+    char* bfr = malloc(sizeof(char *) * 1024);
+    //char* bfr;
     //size = 1023;
     //bfr = malloc(size * (sizeof(char)));
     rt = read(in, bfr, 1023);
-    if (rt == 0)
+    if (rt == 0 || rt == -1)
         return exitAndMsg("Error blank file?", 1);
     // printf("%s%d\n","return is :", rt);
     bfr[rt + 1] = '\0';
-    if (rt == -1)
-        return exitAndMsg("Error while reading file!", 1);
     adat.data = bfr;
     close(in);
+     printf("read ret is :");
+     printf("%d\n", rt);
+     adat.read_ret = rt; // BUG push int32(42L
     adat.adt.ret = 0;
+    free(bfr);
     return adat;
 }
 

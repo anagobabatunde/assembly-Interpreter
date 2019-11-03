@@ -14,14 +14,14 @@ int main(int argc, char **argv)
             return data.adt.ret;
         }
     }
-    // handleAvm(data); // TODO: elFamosoParser
+    handleAvm(data);
     elem_t *list = NULL;
 
     for (int i = 0; i < 11; i++)
     {
         push(&list, i);
     }
-    dump(list);
+    // dump(list);
 
     // printf("apres\n\n");
     // printf("j'ai enleve ça %d\n",pop(&list));

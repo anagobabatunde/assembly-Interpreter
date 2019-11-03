@@ -6,7 +6,7 @@
 ##
 
 CC 		= gcc 
-CCDBG	= gcc -g3 -std=c99
+CCDBG	= gcc -ggdb -g3 -std=c99
 RM		= /bin/rm -rf
 MAKE	= /usr/bin/make
 

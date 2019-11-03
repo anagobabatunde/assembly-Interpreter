@@ -27,7 +27,7 @@ exit
 - Debian **10**
 
 # Utilisation
-
+make lazyd && clear && ./abstractvm res/exemple.avm
 ## Lauch with Docker
 ```
 docker run --rm -it -v $(PWD):/workdir/ --name crw2 jaschac/debian-gcc /bin/bash
