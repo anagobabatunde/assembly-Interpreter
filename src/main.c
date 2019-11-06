@@ -14,7 +14,7 @@ int main(int argc, char **argv)
             return data.adt.ret;
         }
     }
-    handleAvm(data);
+    handleAvm(&data);
     elem_t *list = NULL;
 
     for (int i = 0; i < 11; i++)

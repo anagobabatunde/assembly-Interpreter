@@ -52,8 +52,8 @@ char* getLnByLnNum(char* src, int rl) {
 
 void parser(char* dat, int readReturn) {
     int k,line, col = 0;
-    //char* tBfr =  malloc(sizeof(char*));
-    //tBfr[0] = '\0';
+    char* tBfr =  malloc(sizeof(char*) * 100);
+    // tBfr[0] = '\0';
     //strcpy(tBfr, "wsh");
     /*for (k = 0; dat[k] != '\0'; k++) {
         //tab[line][col] = buffer[k];
@@ -66,39 +66,45 @@ void parser(char* dat, int readReturn) {
         }
     }*/
     // tBfr = malloc(sizeof(dat) / sizeof(dat[0]));
-    /*
     for (k = 0; dat[k] != '\0'; k++) {
         if (dat[k] == '\n') {
             //printf(tData);
             //tBfr = dat[k];
             //tData[0] = 0;
             printf("-nl-\n");
-            tBfr = 0;
+            // tBfr = 0;
         } else {
             //printf("--- wsh ---\n");
-            appendChar(tBfr, dat[k]);
-            //printf("%c", dat[k]);
+            // appendChar(tBfr, dat[k]);
+            printf("%c", dat[k]);
             //my_strcpy(tData, &dat[k]);
         }
         // printf("%c" , avm.data[k]);
-    */
-    char* yes;
-    yes = my_strdup(dat);
-    // printf(yes);
-    printf(getLnByLnNum(yes, 0));
+    }
+    // char* yes;
+    // yes = my_strdup(dat);
+    // printf(dat);
+    // printf(getLnByLnNum(dat, 0));
     printf("\n----\n");
     // printf(getLnByLnNum(yes, 1));
     printf("\n----\n");
-    // printf("%c\n", tBfr[0]);
+    printf("%c\n", tBfr[0]);
+    printf("%s\n", tBfr);
+    free(tBfr);
     printf("-\n");
 }
 
-adat_t handleAvm(adat_t avm) {
-    adat_t adat;
+void handleAvm(adat_t **avm) {
+    adat_t *adat = NULL;
+    adat = avm;
     char* data;
     int k;
-    parser(avm.data, avm.read_ret);
-    return adat;
+    // printf("wsh");
+    // printf("%d", adat->read_ret);
+    // printf("%s\n", adat->data);
+    parser(adat->data, adat->read_ret);
+    // return ;
+    
 }
 
 int isAlone(char *str) {

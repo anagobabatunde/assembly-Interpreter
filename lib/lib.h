@@ -82,7 +82,7 @@ int _mod(elem_t **pile);
 int assert(elem_t **pile, int value);
 adat_t getAvm(char* path);
 adat_t exitAndMsg(char* msg, int code);
-adat_t handleAvm(adat_t avm);
+void handleAvm(adat_t **avm);
 int isRegFile(const char *p);
 
 #endif

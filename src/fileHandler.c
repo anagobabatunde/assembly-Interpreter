@@ -72,8 +72,8 @@ adat_t getAvm(char* path) {
      printf("read ret is :");
      printf("%d\n", rt);
      adat.read_ret = rt; // BUG push int32(42L
-    adat.adt.ret = 0;
-    free(bfr);
+    // adat.adt.ret = 0;
+    // free(bfr);
     return adat;
 }
 
