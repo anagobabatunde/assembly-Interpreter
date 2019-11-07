@@ -7,29 +7,9 @@ adat_t exitAndMsg(char* msg, int code) {
     return adat;
 }
 
-int getNbLine(char *b) {
-    int k, l = 0;
-    for (k; b[k] != '\0'; k++) {
-        if (b[k] == '\n')
-            l++;
-    }
-    return l;
-}
-
-int getLine(char* path) {
-    int in, rt;
-    char buffer[1024];
-    // rt = 0;
-    in = open(path, O_RDONLY);
-    rt = read(rt, buffer, 1023);
-    buffer[rt] = '\0';
-    close(in);
-    return getNbLine(buffer);
-}
-
 adat_t getAvm(char* path) {
     adat_t adat;
-    int in, size, rt;
+    int in, rt = 0;
     in = open(path, O_RDONLY);
     if (in == -1)
         return exitAndMsg("Error while opening file. Please check filepath.", 1);
@@ -53,6 +33,6 @@ adat_t getAvm(char* path) {
     adat.data = bfr;
     close(in);
     adat.read_ret = rt;
-    // free(bfr); // TODO FREE
+    // free(bfr);
     return adat;
 }

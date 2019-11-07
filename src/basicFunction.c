@@ -22,7 +22,7 @@ void dump(elem_t *list)
     elem = list;
     while (elem != NULL)
     {
-        printf("%d\n", elem->value);
+        my_printf("%d\n", elem->value);
         elem = elem->next;
     }
 }

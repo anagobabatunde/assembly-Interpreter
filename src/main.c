@@ -23,8 +23,8 @@ int main(int argc, char **argv)
     }
     // dump(list);
 
-    // printf("apres\n\n");
-    // printf("j'ai enleve ça %d\n",pop(&list));
+    // my_printf("apres\n\n");
+    // my_printf("j'ai enleve ça %d\n",pop(&list));
     my_printf("\n--endline--\n");
     return 0;
 }
