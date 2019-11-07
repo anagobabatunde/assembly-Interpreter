@@ -45,7 +45,7 @@ char *get_type(char *line) {
 
 void parser(char* line) {
     char *type = NULL;
-    type = get_type(line); // irish bar
+    type = get_type(line);
     // my_printf("-%c-\n", type[0]);
     my_printf("-%s-\n", type);
 }
