@@ -69,15 +69,7 @@ void handleAvm(adat_t **avm) {
             tBfr[len] = '\0';
         }
     }
-    // printf("\n----\n");
-    // printf("%s\n", tBfr);
     free(tBfr);
-    // printf("-\n");
-    // printf("%d", adat->read_ret);
-    // printf("%s\n", adat->data);
-    //parser(adat->data, adat->read_ret);
-    // return ;
-    
 }
 
 int notAlone(char *str) {

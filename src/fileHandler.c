@@ -33,9 +33,7 @@ adat_t getAvm(char* path) {
     in = open(path, O_RDONLY);
     if (in == -1)
         return exitAndMsg("Error while opening file. Please check filepath.", 1);
-    // Andy idea: read 8bit per 8bit, then there will be a '\0'
     /*
-    // Tonio impl:
     int i = 0;
     rt = 1;
     char bfr[8];
