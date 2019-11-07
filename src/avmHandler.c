@@ -45,3 +45,5 @@ int notAlone(char *str) {
     }
     return 0;
 }
+
+
