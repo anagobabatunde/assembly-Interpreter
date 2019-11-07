@@ -42,6 +42,13 @@ docker build . -t containers.ikf3.com/etna/tic-crw2
 docker run --rm --name crw2 -itv $(pwd):/workdir/ containers.ikf3.com/etna/tic-crw2 sh -c "make re; sh"
 ```
 
+# Adress space randomization
+Docker doesn't allow it by default. You can disable it by running your container like this:
+```bash
+docker run --rm --name crw2 --security-opt seccomp=unconfined -itv $(pwd):/workdir/ containers.ikf3.com/etna/tic-crw2 sh -c "make re; sh"
+ 
+```
+
 ## Additional Data
 **Contributors:**
 [talamo_a](www.ikf3.com), [anago_b](www.anago.me)
