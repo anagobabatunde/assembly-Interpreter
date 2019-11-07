@@ -30,23 +30,24 @@ char *get_operation(char *line)
 
 char *get_type(char *line) {
     char *type = malloc(sizeof(char));
-    int tmp = 0;
+    int i, len = 0;
     char *result;
-    for(int i = return_first_space(line); line[i] != '('; i++) {
-        // printf("%c", line[i]);
-        type[i] = line[i];
-        // printf("-%c-", type[i]);
-        tmp = i;
+    for(i = return_first_space(line); line[i] != '('; i++) {
+        len = my_strlen(type);
+        if (line[i] != 32)
+            type[len] = line[i];
     } 
-    type[tmp + 2] = '\0';
-    return type;
+    type[len + 2] = '\0';
+    result = my_strdup(type);
+    free(type);
+    return result;
 }
 
 
 void parser(char* line) {
     char *type = NULL;
-    type = get_type(line);
-    printf("-%c-\n", type[0]);
+    type = get_type(line); // irish bar
+    // printf("-%c-\n", type[0]);
 }
 
 void handleAvm(adat_t **avm) {
