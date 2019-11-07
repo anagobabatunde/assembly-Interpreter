@@ -36,6 +36,35 @@ typedef struct avm {
     int val;
 } avm_t;
 
+typedef enum types {
+    NOTYPE,
+    INT8,
+    INT16,
+    INT32,
+    FLOAT,
+    DOUBLE,
+} types_t;
+
+typedef enum oper {
+    PUSH,
+    POP,
+    ADD,
+    SUB,
+    MUL,
+    DIV,
+    MOD,
+    ASSERT,
+    DUMP,
+    PRINT,
+    EXIT,
+    NOTOPER,
+} oper_t;
+
+typedef struct callOper {
+    
+    int (*call[12])();
+} callOper_t;
+
 // LesMy
 int     my_nbrlen(int n);
 int     my_getnbr(char *str);
