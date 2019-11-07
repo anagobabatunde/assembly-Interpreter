@@ -60,11 +60,6 @@ typedef enum oper {
     NOTOPER,
 } oper_t;
 
-typedef struct callOper {
-    
-    int (*call[12])();
-} callOper_t;
-
 // LesMy
 int     my_nbrlen(int n);
 int     my_getnbr(char *str);

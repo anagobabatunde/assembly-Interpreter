@@ -7,7 +7,6 @@ void parser(char* dat, int readReturn) {
 void handleAvm(adat_t **avm) {
     adat_t *adat = NULL;
     adat = avm;
-    //char* data;
     int k,line, col = 0;
     size_t len = 0;
     char* tBfr =  malloc(sizeof(char*));
@@ -24,15 +23,7 @@ void handleAvm(adat_t **avm) {
             tBfr[len] = '\0';
         }
     }
-    printf("\n----\n");
-    // printf("%s\n", tBfr);
     free(tBfr);
-    printf("-\n");
-    // printf("%d", adat->read_ret);
-    // printf("%s\n", adat->data);
-    //parser(adat->data, adat->read_ret);
-    // return ;
-    
 }
 
 int notAlone(char *str) {
