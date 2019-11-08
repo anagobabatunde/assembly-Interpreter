@@ -95,15 +95,15 @@ int flags_percent(va_list list);
 void flagus(void (**ptrf)());
 
 // Project
-int push(elem_t **list, int valeur);
 void dump(elem_t *list);
+int push(elem_t **list, int valeur);
+int assert(elem_t **pile, int value);
 int pop(elem_t **pile);
 int _add(elem_t **pile);
 int _sub(elem_t **pile);
 int _mul(elem_t **pile);
 int _div(elem_t **pile);
 int _mod(elem_t **pile);
-int assert(elem_t **pile, int value);
 adat_t getAvm(char* path);
 adat_t exitAndMsg(char* msg, int code);
 void handleAvm(adat_t *avm);
