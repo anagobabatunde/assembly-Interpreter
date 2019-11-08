@@ -73,28 +73,26 @@ char *get_value(char *line) {
 
 void parser(char* line) {
     int (*func[6])(elem_t ** list) = {pop, _add, _sub, _mul, _div, _mod};
-    char op[6][5] = {"pop","add","sub", "mul", "div", "mod"};
-    for(int i = 0; op[i] == get_operation(line); i++) {
-        printf("j'ai trouvé mon conjoint");
-    }
+    char *operation = get_operation(line);
+    char op[8][5] = {"push","pop","add","sub", "mul", "div", "mod", "\0"};
+    printf("tout les trucs %s == %d, %d \n", op[0], my_strlen(operation) ,op[0] == operation);
+    // for(int i = 0; op[i] != get_operation(line); i++) {
+    //     printf("j'ai trouvé mon conjoint");
+    // }
     char *type = NULL;
     type = get_value(line);
-    // my_printf("-%c-\n", type[0]);
-    my_printf("-%s-\n", get_operation(line));
 }
 
 void handleAvm(adat_t *avm) {
     adat_t *adat = NULL;
     adat = avm;
-    //char* data;
     int k, len = 0;
     char* tBfr =  malloc(sizeof(char*));
     // tBfr[0] = '\0';
     for (k = 0; adat->data[k] != '\0'; k++) {
         if (adat->data[k] == '\n' || adat->data[k] == '\0') {
-            if (notAlone(tBfr))
-                parser(tBfr);
-            // my_printf("-nl-\n");
+            // if (notAlone(tBfr))
+            parser(tBfr);
             tBfr[0] = '\0';
         } else {
             len = my_strlen(tBfr);
