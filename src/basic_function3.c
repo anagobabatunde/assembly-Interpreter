@@ -15,3 +15,21 @@ int assert(elem_t **pile, int value)
         return (0);
     return (1);
 }
+
+void delete_node(elem_t **head_ref, int key)
+{
+    elem_t *temp = *head_ref, *prev;
+    if (temp != NULL && temp->value == key)
+    {
+        *head_ref = temp->next;
+        free(temp);
+        return;
+    }
+    while (temp != NULL && temp->value != key) {
+        prev = temp;
+        temp = temp->next;
+    }
+    if (temp == NULL) return;
+    prev->next = temp->next;
+    free(temp);
+} 

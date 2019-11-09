@@ -22,37 +22,36 @@ int push(elem_t **list, int valeur)
     return 0;
 }
 
-void dump(elem_t *list)
+int dump(elem_t **list)
 {
     elem_t *elem = NULL;
 
-    elem = list;
+    elem = *list;
     while (elem != NULL)
     {
         my_printf("%d\n", elem->value);
         elem = elem->next;
     }
+    return 1;
 }
 
 int pop(elem_t **pile)
 {
-    int val;
-    elem_t *tmp;
-    if (pile == NULL)
-        return -1;
-    tmp = (*pile)->next;
+    int val = 0;
     val = (*pile)->value;
-    free(*pile);
-    *pile = tmp;
+    delete_node(&(*pile), val);
     return val;
 }
 
 int _add(elem_t **pile) {
-    elem_t *tmp;
-    tmp = *pile;
-    int sum = 0;
-    sum = pop(&tmp) + pop(&tmp);
-    *pile = tmp;
-    push(pile, sum);
+    int previs = (*pile)->value;
+    *pile = (*pile)->next;
+    int prevus = (*pile)->value;
+    delete_node(&(*pile), previs);
+    delete_node(&(*pile), prevus);
+    int sum = previs + prevus;
+    push(&(*pile), sum);
+    // *pile = tmp;
     return (sum);
 }
+

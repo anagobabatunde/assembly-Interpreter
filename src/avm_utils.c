@@ -27,7 +27,9 @@ char *get_operation(char *line) {
     char *op = malloc(sizeof(char));
     int tmp = 0;
     char *result;
-    for (int i = 0; line[i] != 32; i++) {
+    // line[my_strlen(line)] = '\0';
+    // my_printf("Line is [%s]\n", line);
+    for (int i = 0; line[i] != ' '; i++) {
         op[i] = line[i];
         tmp = i;
     }

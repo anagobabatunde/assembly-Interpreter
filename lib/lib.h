@@ -32,7 +32,6 @@ typedef struct adatret {
     char *msg;
 } adatret_t;
 
-// AVM Data
 typedef struct adat {
     adatret_t adt;
     int read_ret;
@@ -104,7 +103,7 @@ int flags_percent(va_list list);
 void flagus(void (**ptrf)());
 
 // Project
-void dump(elem_t *list);
+int dump(elem_t **list);
 int push(elem_t **list, int value);
 int assert(elem_t **pile, int value);
 int pop(elem_t **pile);
@@ -121,9 +120,11 @@ void free_all(adat_t data);
 adat_t mall_all(adat_t data);
 char *get_type(char *line);
 char *get_operation(char *line);
+char *get_operation2(char *line);
 int return_first_space(char *line);
 int return_first_paren(char *line);
 char *get_value(char *line);
 int not_alone(char *str);
+void delete_node(elem_t **head_ref, int key);
 
 #endif

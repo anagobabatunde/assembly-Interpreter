@@ -31,3 +31,20 @@ int not_alone(char *str) {
     }
     return 0;
 }
+
+char *get_operation2(char *line) {
+    char *op = malloc(sizeof(char));
+    int tmp = 0;
+    char *result;
+    // line[my_strlen(line)] = '\0';
+    //my_printf("Line is [%s]\n", line);
+    for (int i = 0; line[i] != '\0'; i++) {
+        op[i] = line[i];
+        tmp = i;
+    }
+    op[tmp + 1] = '\0';
+    result = my_strdup(op);
+    free(op);
+    // printf("j'ai recup ça [%s]\n", result);
+    return result;
+}

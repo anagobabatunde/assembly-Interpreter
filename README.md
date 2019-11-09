@@ -33,6 +33,10 @@ make re && ./abstractvm res/exemple.avm
 # Dev way:
 make lazyd && clear && ./abstractvm res/exemple.avm
 ```
+>debug
+```
+gdb -q -args ./abstractvm res/exemple.avm
+```
 
 ## Lauch with Docker
 ```
