@@ -6,7 +6,7 @@ int return_first_paren(char *line) {
     for(int i = 0; line[i] != '('; i++) {
         tmp = i;
     }
-    return tmp + 1;
+    return tmp + 2;
 }
 
 int return_first_space(char *line) {
@@ -47,8 +47,6 @@ char *get_type(char *line) {
 }
 
 char *get_value(char *line) {
-    printf("\n j'ai reçu la phrase %s\n",line);
-    printf("--je suis la pos de la first parenthese %d\n\n" , return_first_paren(line));
     char *value = malloc(sizeof(char));
     int i, len = 0;
     char *result;
@@ -64,7 +62,7 @@ char *get_value(char *line) {
 }
 
 void parser(char *line, elem_t **list) {
-  elem_t *tmp;
+  elem_t *tmp = NULL;
   tmp = *list;
   int (*func[6])(elem_t * *list) = {pop, _add, _sub, _mul, _div, _mod};
   int (*function[2])(elem_t **list, int value) = {push, assert};
@@ -79,19 +77,23 @@ void parser(char *line, elem_t **list) {
   if (notAlone(line) != 0) {
     for (int i = 0; my_strcmp(manip[i], "\0") != 0; i++) {
       if (my_strcmp(operation, manip[i]) == 0) {
-        printf("je suis la vrai operation %s %s\n", manip[i], operation);
-        printf("--je suis le chiffre %s\n",get_value(line));
-        // function[i](&tmp, );
+        function[i](&tmp, my_getnbr(get_value(line)));
       }
     }
   } else {
+    if (my_strcmp(get_operation(line), "dump")) {
+      dump(tmp);
+      return;
+    }
     for (int i = 0; my_strcmp(op[i], "\0") != 0; i++) {
       if (my_strcmp(operation, op[i]) == 0) {
-        printf("je suis la vrai fonction %s \n", op[i]);
+        // printf("je suis la vrai fonction %s %d\n", op[i], i);
+        // dump(tmp);
         func[i](&tmp);
       }
     }
   }
+  *list = tmp;
 }
 
 elem_t *handleAvm(adat_t *avm) {
