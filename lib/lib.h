@@ -96,7 +96,7 @@ void flagus(void (**ptrf)());
 
 // Project
 void dump(elem_t *list);
-int push(elem_t **list, int valeur);
+int push(elem_t **list, int value);
 int assert(elem_t **pile, int value);
 int pop(elem_t **pile);
 int _add(elem_t **pile);
@@ -106,7 +106,7 @@ int _div(elem_t **pile);
 int _mod(elem_t **pile);
 adat_t getAvm(char* path);
 adat_t exitAndMsg(char* msg, int code);
-void handleAvm(adat_t *avm);
+elem_t* handleAvm(adat_t *avm);
 int isRegFile(const char *p);
 int notAlone(char *str);
 

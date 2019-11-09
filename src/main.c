@@ -2,6 +2,7 @@
 
 int main(int argc, char **argv)
 {
+    elem_t *result = NULL;
     adat_t data;
     if (argc>=3 || argc<=1) {
         my_printf("Usage: ./abstractvm path/to/program.avm\n(Hint: there's pre-made AVM files in the res folder.)\n");
@@ -14,14 +15,9 @@ int main(int argc, char **argv)
             return data.adt.ret;
         }
     }
-    handleAvm(&data);
-    elem_t *list = NULL;
+    result = handleAvm(&data);
 
-    for (int i = 0; i < 11; i++)
-    {
-        push(&list, i);
-    }
-    // dump(list);
+    dump(result);
 
     // my_printf("apres\n\n");
     // my_printf("j'ai enleve ça %d\n",pop(&list));
