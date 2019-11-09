@@ -1,8 +1,5 @@
-push int32(42)
-push int32(23)
-push int32(11)
-sub
-sub
-push int32(23)
-add
+push int(32)
+push int(0)
+div
 dump
+exit

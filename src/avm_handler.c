@@ -21,8 +21,6 @@ void parser(char *line, elem_t **list) {
     int (*function[2])(elem_t **list, int value) = {push, assert};
     char manip[3][6] = {"push", "assert", "\0"};
     char *operation;
-    if (my_strcmp(line, "exit") == 0)
-        exit_msg("", 2);
     if (not_alone(line) != 0) {
         operation = get_operation(line);
         for (int i = 0; my_strcmp(manip[i], "\0") != 0; i++) {
@@ -39,9 +37,11 @@ adat_t *handle_avm(adat_t *avm) {
     elem_t *list = NULL;
     adat_t *dat = NULL;
     dat = avm;
-    int k, len = 0;
+    int k, len, exit = 0;
     for (k = 0; dat->data[k] != '\0'; k++) {
         if (dat->data[k] == '\n' || dat->data[k] == '\0') {
+            if (my_strcmp(dat->handle, "exit") == 0)
+                exit++;
             parser(dat->handle, &list);
             dat->handle[0] = '\0';
         } else {
@@ -50,5 +50,7 @@ adat_t *handle_avm(adat_t *avm) {
             dat->handle[len] = '\0';
         }
     }
+    if (exit <= 0)
+        return exit_msg(avm, "ERR: No exit condition!", 1);
     return dat;
 }

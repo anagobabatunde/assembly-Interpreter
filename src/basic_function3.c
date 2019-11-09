@@ -32,4 +32,4 @@ void delete_node(elem_t **head_ref, int key)
     if (temp == NULL) return;
     prev->next = temp->next;
     free(temp);
-} 
+}

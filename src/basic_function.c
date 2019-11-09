@@ -51,7 +51,6 @@ int _add(elem_t **pile) {
     delete_node(&(*pile), prevus);
     int sum = previs + prevus;
     push(&(*pile), sum);
-    // *pile = tmp;
     return (sum);
 }
 

@@ -15,7 +15,7 @@ int main(int argc, char **argv)
         my_printf("Usage: ./abstractvm path/to/program.avm\n");
         return 1;
     } else if (argc == 2) {
-        data = get_avm(data, argv[1]);
+        get_avm(&data, argv[1]);
         handle_avm(&data);
         if (data.adt.ret == 1) {
             if (data.adt.msg)
