@@ -2,25 +2,21 @@
 
 int main(int argc, char **argv)
 {
-    elem_t *result = NULL;
     adat_t data;
+    data = mall_all(data);
     if (argc>=3 || argc<=1) {
-        my_printf("Usage: ./abstractvm path/to/program.avm\n(Hint: there's pre-made AVM files in the res folder.)\n");
+        my_printf("Usage: ./abstractvm path/to/program.avm\n");
         return 1;
-    } else if (argc==2) { // TODO : is if not needed ?
-        data = getAvm(argv[1]);
+    } else if (argc==2) {
+        data = get_avm(data, argv[1]);
+        handle_avm(&data);
         if (data.adt.ret == 1) {
             if (data.adt.msg)
                 my_printf("%s\n" , data.adt.msg);
+            free_all(data);
             return data.adt.ret;
         }
+        free_all(data);
     }
-    result = handleAvm(&data);
-
-    dump(result);
-
-    // my_printf("apres\n\n");
-    // my_printf("j'ai enleve ça %d\n",pop(&list));
-    my_printf("\n--endline--\n");
     return 0;
 }

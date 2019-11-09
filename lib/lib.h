@@ -29,7 +29,9 @@ typedef struct adatret {
 typedef struct adat {
     adatret_t adt;
     int read_ret;
-    char* data; // The data
+    char* handle;
+    char* avm;
+    char* data;
 } adat_t;
 
 typedef struct avm {
@@ -104,10 +106,17 @@ int _sub(elem_t **pile);
 int _mul(elem_t **pile);
 int _div(elem_t **pile);
 int _mod(elem_t **pile);
-adat_t getAvm(char* path);
-adat_t exitAndMsg(char* msg, int code);
-elem_t* handleAvm(adat_t *avm);
-int isRegFile(const char *p);
-int notAlone(char *str);
+adat_t get_avm(adat_t data, char* path);
+adat_t exit_msg(char* msg, int code);
+adat_t *handle_avm(adat_t *avm);
+int not_alone(char *str);
+void free_all(adat_t data);
+adat_t mall_all(adat_t data);
+char *get_type(char *line);
+char *get_operation(char *line);
+int return_first_space(char *line);
+int return_first_paren(char *line);
+char *get_value(char *line);
+int not_alone(char *str);
 
 #endif

@@ -36,9 +36,13 @@ SRC	= \
 	src/my_printf_func/flags_func.c \
 	src/my_printf_func/flags_func2.c \
 	src/main.c \
-	src/basicFunction.c \
-	src/fileHandler.c \
-	src/avmHandler.c
+	src/basic_function.c \
+	src/basic_function2.c \
+	src/basic_function3.c \
+	src/file_handler.c \
+	src/avm_handler.c \
+    src/avm_utils.c \
+	src/avm_utils2.c
 
 OBJ	= $(SRC:.c=.o)
 

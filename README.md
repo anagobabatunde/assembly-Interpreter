@@ -52,4 +52,3 @@ docker run --rm --name crw2 --security-opt seccomp=unconfined -itv $(pwd):/workd
 ## Additional Data
 **Contributors:**
 [talamo_a](www.ikf3.com), [anago_b](www.anago.me)
-
