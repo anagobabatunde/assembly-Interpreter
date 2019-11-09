@@ -1,5 +1,8 @@
-push int(32)
-push int(0)
-div
+push int32(0)
+push int16(2)
+sub
+push int16(76)
+push int16(2)
+push int16(10)
 dump
 exit

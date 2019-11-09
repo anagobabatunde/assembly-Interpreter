@@ -32,10 +32,9 @@ exit
 make re && ./abstractvm res/exemple.avm
 # Dev way:
 make lazyd && clear && ./abstractvm res/exemple.avm
-```
->debug
-```
-gdb -q -args ./abstractvm res/exemple.avm
+# Debug with dev way:
+gdb -q -args ./abstractvm res/exemple.avm 
+# Tip: add breakpoint to parser so you can debug line by line.
 ```
 
 ## Lauch with Docker

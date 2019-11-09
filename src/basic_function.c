@@ -11,7 +11,7 @@ int push(elem_t **list, int valeur)
 {
     elem_t *head = NULL;
 
-    if (list == NULL || valeur == 0)
+    if (list == NULL)
         return -1;
     head = malloc(sizeof(*head));
     if (head == NULL)
