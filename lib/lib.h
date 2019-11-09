@@ -1,3 +1,10 @@
+/*
+** ETNA PROJECT, 08/11/2019 by talamo_a
+** lib.h
+** File description:
+**      lib of avm prohect
+*/
+
 #ifndef MY_LIST_
 #define MY_LIST_
 
@@ -21,17 +28,17 @@ struct element  {
 typedef struct element elem_t;
 
 typedef struct adatret {
-    int ret; // Return value
-    char* msg; // Error/info message, if needed
+    int ret;
+    char *msg;
 } adatret_t;
 
 // AVM Data
 typedef struct adat {
     adatret_t adt;
     int read_ret;
-    char* handle;
-    char* avm;
-    char* data;
+    char *handle;
+    char *avm;
+    char *data;
 } adat_t;
 
 typedef struct avm {
@@ -106,8 +113,8 @@ int _sub(elem_t **pile);
 int _mul(elem_t **pile);
 int _div(elem_t **pile);
 int _mod(elem_t **pile);
-adat_t get_avm(adat_t data, char* path);
-adat_t exit_msg(char* msg, int code);
+adat_t get_avm(adat_t data, char *path);
+adat_t exit_msg(char *msg, int code);
 adat_t *handle_avm(adat_t *avm);
 int not_alone(char *str);
 void free_all(adat_t data);

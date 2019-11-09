@@ -1,6 +1,13 @@
+/*
+** ETNA PROJECT, 08/11/2019 by talamo_a
+** file_handler.c
+** File description:
+**      avm file handler
+*/
+
 #include "../lib/lib.h"
 
-adat_t exit_msg(char* msg, int code) {
+adat_t exit_msg(char *msg, int code) {
     adat_t adat;
     adat.adt.msg = msg;
     adat.adt.ret = code;
@@ -13,7 +20,7 @@ adat_t mall_all(adat_t data) {
     return data;
 }
 
-adat_t get_avm(adat_t data, char* path) {
+adat_t get_avm(adat_t data, char *path) {
     int in, rt = 0;
     in = open(path, O_RDONLY);
     if (in == -1)

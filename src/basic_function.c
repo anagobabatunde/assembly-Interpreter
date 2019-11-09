@@ -1,3 +1,10 @@
+/*
+** ETNA PROJECT, 08/11/2019 by talamo_a
+** basic_function.c
+** File description:
+**      first part of functions
+*/
+
 #include "../lib/lib.h"
 
 int push(elem_t **list, int valeur)
@@ -33,7 +40,6 @@ int pop(elem_t **pile)
     elem_t *tmp;
     if (pile == NULL)
         return -1;
-    
     tmp = (*pile)->next;
     val = (*pile)->value;
     free(*pile);

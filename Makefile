@@ -5,7 +5,7 @@
 ##      This file compiles
 ##
 
-CC 		= gcc 
+CC 		= gcc
 CCDBG	= gcc -ggdb -g3 -std=c99
 RM		= /bin/rm -rf
 MAKE	= /usr/bin/make
@@ -41,7 +41,7 @@ SRC	= \
 	src/basic_function3.c \
 	src/file_handler.c \
 	src/avm_handler.c \
-    src/avm_utils.c \
+	src/avm_utils.c \
 	src/avm_utils2.c
 
 OBJ	= $(SRC:.c=.o)

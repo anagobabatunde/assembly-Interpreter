@@ -2,7 +2,7 @@
 ** ETNA PROJECT, 21/02/2019 by anago_b
 ** my_strdup.c
 ** File description:
-**      strdup
+**      my_strdup
 */
 
 #include "../../lib/lib.h"

@@ -2,7 +2,7 @@
 ** ETNA PROJECT, 21/02/2019 by anago_b
 ** my_strcpy.c
 ** File description:
-**      strcpy
+**      my_strcpy
 */
 
 #include "../../lib/lib.h"
