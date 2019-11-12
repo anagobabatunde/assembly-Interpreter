@@ -21,6 +21,7 @@ adat_t mall_all(adat_t data) {
 
 adat_t *get_avm(adat_t *data, char *path) {
     int in, rt = 0;
+
     in = open(path, O_RDONLY);
     if (in == -1)
         return exit_msg(data, "Error while opening file.", 1);

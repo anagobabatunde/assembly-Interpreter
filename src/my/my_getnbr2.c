@@ -9,6 +9,7 @@ int my_getnbr2(char *str, int *i)
 {
     int isneg = 1;
     int res = 0;
+
     while (str[*i] == 43 || str[*i] == 45 ){
         if (str[*i] == 45)
             isneg *= -1;

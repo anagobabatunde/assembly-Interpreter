@@ -38,18 +38,21 @@ int dump(elem_t **list)
 int pop(elem_t **pile)
 {
     int val = 0;
+
     val = (*pile)->value;
     delete_node(&(*pile), val);
     return val;
 }
 
 int _add(elem_t **pile) {
-    int previs = (*pile)->value;
+    int previs, prevus, sum = 0;
+
+    previs = (*pile)->value;
     *pile = (*pile)->next;
-    int prevus = (*pile)->value;
+    prevus = (*pile)->value;
     delete_node(&(*pile), previs);
     delete_node(&(*pile), prevus);
-    int sum = previs + prevus;
+    sum = previs + prevus;
     push(&(*pile), sum);
     return (sum);
 }

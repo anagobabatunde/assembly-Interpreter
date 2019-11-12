@@ -8,6 +8,7 @@
 int my_strlen2(char *str)
 {
     int i = 0;
+
     while (str[i] != ' ' && str[i] != '\n' )
         i++;
     return (i);

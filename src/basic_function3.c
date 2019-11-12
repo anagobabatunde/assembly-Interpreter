@@ -10,6 +10,7 @@
 int assert(elem_t **pile, int value)
 {
     elem_t *tmp;
+
     tmp = *pile;
     if (tmp->value == value)
         return (0);
@@ -19,6 +20,7 @@ int assert(elem_t **pile, int value)
 void delete_node(elem_t **head_ref, int key)
 {
     elem_t *temp = *head_ref, *prev;
+
     if (temp != NULL && temp->value == key)
     {
         *head_ref = temp->next;

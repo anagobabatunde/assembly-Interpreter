@@ -8,7 +8,6 @@
 #ifndef MY_LIST_
 #define MY_LIST_
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -43,30 +42,6 @@ typedef struct adat {
 typedef struct avm {
     int val;
 } avm_t;
-
-typedef enum types {
-    NOTYPE,
-    INT8,
-    INT16,
-    INT32,
-    FLOAT,
-    DOUBLE,
-} types_t;
-
-typedef enum oper {
-    PUSH,
-    POP,
-    ADD,
-    SUB,
-    MUL,
-    DIV,
-    MOD,
-    ASSERT,
-    DUMP,
-    PRINT,
-    EXIT,
-    NOTOPER,
-} oper_t;
 
 // LesMy
 int     my_nbrlen(int n);

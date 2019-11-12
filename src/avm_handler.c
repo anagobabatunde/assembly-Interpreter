@@ -21,6 +21,7 @@ void parser(char *line, elem_t **list) {
     int (*function[2])(elem_t **list, int value) = {push, assert};
     char manip[3][6] = {"push", "assert", "\0"};
     char *operation;
+
     if (not_alone(line) != 0) {
         operation = get_operation(line);
         for (int i = 0; my_strcmp(manip[i], "\0") != 0; i++) {
@@ -38,6 +39,7 @@ adat_t *handle_avm(adat_t *avm) {
     adat_t *dat = NULL;
     dat = avm;
     int k, len, exit = 0;
+
     for (k = 0; dat->data[k] != '\0'; k++) {
         if (dat->data[k] == '\n' || dat->data[k] == '\0') {
             if (my_strcmp(dat->handle, "exit") == 0)

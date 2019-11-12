@@ -10,6 +10,7 @@
 int main(int argc, char **argv)
 {
     adat_t data;
+
     data = mall_all(data);
     if (argc >= 3 || argc <= 1) {
         my_printf("Usage: ./abstractvm path/to/program.avm\n");

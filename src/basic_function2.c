@@ -9,6 +9,7 @@
 
 int _sub(elem_t **pile) {
     int sum = 0;
+
     sum = pop(&(*pile)) - pop(&(*pile));
     push(&(*pile), sum);
     return (sum);
@@ -16,16 +17,18 @@ int _sub(elem_t **pile) {
 
 int _mul(elem_t **pile) {
     int sum = 0;
+
     sum = pop(&(*pile)) * pop(&(*pile));
     push(&(*pile), sum);
     return (sum);
 }
 
 int _div(elem_t **pile) {
-    int sum = 0;
-    int gauche = (*pile)->value;
+    int sum, droite, gauche = 0;
+
+    gauche = (*pile)->value;
     *pile = (*pile)->next;
-    int droite = (*pile)->value;
+    droite = (*pile)->value;
     delete_node(&(*pile), gauche);
     delete_node(&(*pile), droite);
     if (droite == 0) {
@@ -40,6 +43,7 @@ int _div(elem_t **pile) {
 
 int _mod(elem_t **pile) {
     int sum, droite, gauche = 0;
+
     gauche = pop(&(*pile));
     droite = pop(&(*pile));
     if (droite == 0) {

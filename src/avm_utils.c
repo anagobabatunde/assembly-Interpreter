@@ -9,6 +9,7 @@
 
 int return_first_paren(char *line) {
     int tmp = 0;
+
     for (int i = 0; line[i] != '('; i++) {
         tmp = i;
     }
@@ -17,6 +18,7 @@ int return_first_paren(char *line) {
 
 int return_first_space(char *line) {
     int tmp = 0;
+
     for (int i = 0; line[i] != 32; i++) {
         tmp = i;
     }
@@ -27,6 +29,7 @@ char *get_operation(char *line) {
     char *op = malloc(sizeof(char));
     int tmp = 0;
     char *result;
+
     for (int i = 0; line[i] != ' '; i++) {
         op[i] = line[i];
         tmp = i;
@@ -41,6 +44,7 @@ char *get_type(char *line) {
     char *type = malloc(sizeof(char));
     int i, len = 0;
     char *result;
+
     for (i = return_first_space(line); line[i] != '('; i++) {
         len = my_strlen(type);
         if (line[i] != 32)
